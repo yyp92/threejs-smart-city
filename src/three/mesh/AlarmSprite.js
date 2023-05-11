@@ -41,7 +41,9 @@ export default class AlarmSprite {
       event.mesh = this.mesh;
       event.alarm = this;
 
+      // 射线检测
       const intersects = this.raycaster.intersectObject(this.mesh);
+
       if (intersects.length > 0) {
         this.fns.forEach((fn) => {
           fn(event);
